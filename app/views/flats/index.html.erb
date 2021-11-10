@@ -1,0 +1,18 @@
+require font-awesome
+<h1> All Flats</h1>
+
+<div class="container">
+  <div class="row">
+    <% @flats.each do |flat| %>
+      <div class="col-lg-4 d-flex align-items-stretch">
+        <div class="card" style="width: 18rem;">
+          <h3 class="card-title"><%= flat.name %></h3>
+          <p class="card-text"><%= flat.address %></p>
+          <p class="card-text"><%= flat.number_of_guests %></p>
+          <p><%= flat.price_per_night %><p>
+          <p><%= link_to "More Info", flat_path(flat), class: "btn btn-primary" %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
